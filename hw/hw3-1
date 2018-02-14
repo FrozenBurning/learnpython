@@ -1,0 +1,13 @@
+
+repeat = int(input("Please input the times you want do:"))
+for r in range(0,repeat):
+    a = int(input("Please input line1:"))
+    b = int(input("Please input line2:"))
+    c = int(input("Please input line3:"))
+    perimeter = a + b + c
+    s = (a+b+c)/2
+    area = (s*(s-a)*(s-b)*(s-c)) ** 0.5
+    if a+b>c and a+c>b and b+c>a:
+        print("area=%.2f"%area,"\nperimeter=%.2f"%perimeter)
+    else :
+        print("These sides do not correspond to a valid triangle.")

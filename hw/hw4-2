@@ -1,0 +1,7 @@
+
+firstlist = input("please input the first one:").split(',')
+secondlist = input("please input the second one:").split(',')
+
+newlist = firstlist + secondlist
+newlist = map(int,newlist)
+print(sorted(newlist))

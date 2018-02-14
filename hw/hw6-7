@@ -1,0 +1,41 @@
+import random
+
+def get_random_expression(result) -> str:
+    """Get a random expression test in 1 to 100"""
+    a = random.randint(1,100)
+    b = random.randint(1,100)
+    flag = random.choice(['+','-','*','/'])
+    if flag == '+':
+        while a+b > 100:
+            a = random.randint(1, 100)
+            b = random.randint(1, 100)
+        result = a+b
+    elif flag == '-':
+        while a-b < 0:
+            a = random.randint(1, 100)
+            b = random.randint(1, 100)
+        result = a-b
+    elif flag == '*':
+        while a*b > 100:
+            a = random.randint(1, 100)
+            b = random.randint(1, 100)
+        result = a*b
+    elif flag == '/':
+        while a % b != 0:
+            a = random.randint(1, 100)
+            b = random.randint(1, 100)
+        result = a/b
+    return str(a) + flag + str(b),result
+
+result = 0
+while True:
+    expression = get_random_expression(result)
+    print(expression[0])
+    result = expression[1]
+    anwser = input("\n please input your anwser:")
+    if anwser == 'q':
+        break
+    if float(anwser) == result:
+        print("Big Con! your are right!")
+    else:
+        print("Sorry.Wrong anwser!")

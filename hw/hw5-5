@@ -1,0 +1,10 @@
+string = input("Please input a sentence:")
+
+slist = string.split(' ')
+
+for i,item in enumerate(slist):
+    if item[-1] in ',.!?':
+        slist[i] = item[:-2]
+newlist = sorted(slist,key = lambda x:len(x))[-1]
+
+print (newlist)

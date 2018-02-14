@@ -1,0 +1,18 @@
+import msvcrt
+
+string = ''
+
+while True:
+    char = msvcrt.getch()
+    if char == '.':
+        break
+    else:
+        if char.isupper():
+            print(char.lower(),end='')
+        elif char.islower():
+            print(char.upper(),end='')
+        else:
+            print(char)
+    string += str(char)
+
+print(string)

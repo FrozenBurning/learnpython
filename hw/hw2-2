@@ -1,0 +1,11 @@
+
+a=int(input("please input a figure:"))
+b=int(input("please input a figure:"))
+c=int(input("please input a figure:"))
+
+numlist =[a,b,c]
+numstr=''
+for num in numlist:
+    numstr = numstr + str(num)
+print(numstr)
+print(numstr[::-1])

@@ -1,0 +1,33 @@
+import pprint
+info = {}
+i = 1
+preg = 0
+while True:
+    tstr = input("Please input name,student ID,grades(splited by ','):")
+    temp = tstr.split(',')
+    if int(temp[1]) == 0:
+        break
+    info.setdefault(temp[0],{})
+    info[temp[0]] = {'ID':int(temp[1]),
+                 'grades':int(temp[2])}
+info = sorted(info.items(),key=lambda item:item[1]['grades'],reverse=True)
+info = dict(info)
+for v in info.items():
+    if preg == v[1]['grades']:
+        i -=1
+    v[1]['rank'] = i
+    preg = v[1]['grades']
+    i += 1
+
+while True:
+    flag = 0
+    id_wanted = int(input("Please input the ID you wanna search:"))
+    if id_wanted == 0:
+        break
+    for m in info.items():
+        if m[1]['ID'] == id_wanted:
+            print(m)
+            flag = 1
+            break
+    if flag == 0:
+        print("No Such Student Found!")

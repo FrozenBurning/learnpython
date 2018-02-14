@@ -1,0 +1,12 @@
+from numpy import *
+
+n = int(input("Please input n="))
+
+mlist = []
+
+for i in range(1,n+1):
+    present_list = str(input("Please input the %d row:"%i)).split(',')
+    mlist.append(present_list)
+
+m = mat(mlist)
+print(m)

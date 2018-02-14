@@ -1,0 +1,16 @@
+
+while True:
+    s = set()
+    n = int(input("Please input a integer:"))
+    if n == 0:
+        break
+    while True:
+        if n % 2 == 0:
+            n = n/2
+        else:
+            n = n*3+1
+        pres = set(s)
+        s.add(n)
+        if len(pres) == len(s):
+            break
+    print (s)

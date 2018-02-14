@@ -1,0 +1,9 @@
+
+list = ['FORTRAN','PASCAL','BASIC','C','COBOL','SMALLTALK']
+
+char = input("please input: ")
+
+for item in list:
+    if char == item[:len(char)]:
+        print(item)
+
